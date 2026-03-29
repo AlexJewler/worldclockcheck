@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>World Clock Check — Time Zone Converter & Meeting Planner</title>
+  <meta name="description" content="Check the current time in any city worldwide. Convert time zones instantly and find the best meeting time for your global team.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <div class="logo">
+        <span class="logo-icon">🌐</span>
+        <span class="logo-text">WorldClockCheck</span>
+      </div>
+      <nav>
+        <a href="#converter">Converter</a>
+        <a href="#meeting-planner">Meeting Planner</a>
+        <a href="#world-clocks">World Clocks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>What time is it <span class="highlight">anywhere in the world?</span></h1>
+        <p class="subtitle">Instantly convert time zones, plan global meetings, and check the current time in any city.</p>
+      </div>
+    </section>
+
+    <!-- Time Zone Converter -->
+    <section id="converter" class="section">
+      <div class="container">
+        <h2>Time Zone Converter</h2>
+        <p class="section-desc">Convert a specific time between any two time zones.</p>
+        <div class="converter-card">
+          <div class="converter-row">
+            <div class="input-group">
+              <label>Date & Time</label>
+              <input type="datetime-local" id="inputTime">
+            </div>
+            <div class="input-group">
+              <label>From</label>
+              <select id="fromZone"></select>
+            </div>
+            <div class="arrow">→</div>
+            <div class="input-group">
+              <label>To</label>
+              <select id="toZone"></select>
+            </div>
+          </div>
+          <button class="btn-primary" onclick="convertTime()">Convert</button>
+          <div class="result" id="convertResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ad Unit 1 -->
+    <div class="ad-container">
+      <div class="container">
+        <!-- Google AdSense unit will go here -->
+        <div class="ad-placeholder">Advertisement</div>
+      </div>
+    </div>
+
+    <!-- Meeting Planner -->
+    <section id="meeting-planner" class="section section-alt">
+      <div class="container">
+        <h2>Meeting Planner</h2>
+        <p class="section-desc">Find the best time to meet across multiple time zones.</p>
+        <div class="planner-card">
+          <div class="planner-zones" id="plannerZones">
+            <div class="zone-row">
+              <select class="zone-select"></select>
+              <button class="btn-remove" onclick="removeZone(this)">✕</button>
+            </div>
+            <div class="zone-row">
+              <select class="zone-select"></select>
+              <button class="btn-remove" onclick="removeZone(this)">✕</button>
+            </div>
+          </div>
+          <button class="btn-secondary" onclick="addZone()">+ Add Time Zone</button>
+          <button class="btn-primary" onclick="planMeeting()">Find Best Times</button>
+          <div class="planner-result" id="plannerResult"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- World Clocks -->
+    <section id="world-clocks" class="section">
+      <div class="container">
+        <h2>Current Time Around the World</h2>
+        <p class="section-desc">Live clocks for major cities worldwide. Updates every second.</p>
+        <div class="clocks-grid" id="clocksGrid"></div>
+      </div>
+    </section>
+
+    <!-- Ad Unit 2 -->
+    <div class="ad-container">
+      <div class="container">
+        <div class="ad-placeholder">Advertisement</div>
+      </div>
+    </div>
+
+    <!-- FAQ / SEO Content -->
+    <section class="section section-alt">
+      <div class="container faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>How do I convert time zones?</h3>
+            <p>Use the converter above. Select your date and time, choose your origin time zone, select the destination, and click Convert. The result appears instantly.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the best time for a US to Europe meeting?</h3>
+            <p>Generally 9–11 AM Eastern Time works well — that is 3–5 PM in London and 4–6 PM in Central Europe. Both sides are in their working day.</p>
+          </div>
+          <div class="faq-item">
+            <h3>How many time zones are there?</h3>
+            <p>There are 24 standard time zones, though with half-hour and quarter-hour offsets, there are over 38 distinct UTC offsets in use worldwide.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does daylight saving time affect conversions?</h3>
+            <p>Yes. Our converter accounts for daylight saving time automatically based on the date you enter. Not all countries observe DST — we handle those differences too.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is UTC?</h3>
+            <p>UTC (Coordinated Universal Time) is the global time standard. All other time zones are defined as offsets from UTC. For example, New York is UTC-5 in winter and UTC-4 in summer.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is this tool free?</h3>
+            <p>Yes, WorldClockCheck is completely free with no registration required.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon">🌐</span>
+          <span class="logo-text">WorldClockCheck</span>
+        </div>
+        <p class="footer-desc">The simplest way to check time zones and plan global meetings.</p>
+        <p class="footer-copy">&copy; 2026 WorldClockCheck. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
